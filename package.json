@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "npx test-storybook"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
