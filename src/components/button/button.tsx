@@ -1,11 +1,11 @@
 import { ComponentProps } from 'react';
-import styles from './button.module.css';
-import clsx from 'clsx';
+import { type ButtonVariants, variants } from './button-variants';
 
-export type ButtonProps = ComponentProps<'button'> & {
-  variant?: 'primary' | 'secondary' | 'destructive';
-  size?: 'small' | 'medium' | 'large';
-};
+export type ButtonProps = ComponentProps<'button'> &
+  ButtonVariants & {
+    variant?: 'primary' | 'secondary' | 'destructive';
+    size?: 'small' | 'medium' | 'large';
+  };
 
 export const Button = ({
   variant = 'primary',
@@ -13,7 +13,5 @@ export const Button = ({
   className,
   ...props
 }: ButtonProps) => {
-  return (
-    <button className={clsx(styles.button, styles[variant], styles[size], className)} {...props} />
-  );
+  return <button {...props} className={variants({ variant, size })} />;
 };
