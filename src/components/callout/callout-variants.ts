@@ -1,5 +1,8 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
+const variations = ['primary', 'success', 'danger', 'information', 'warning'] as const;
+type Variations = (typeof variations)[number];
+
 export type CalloutVariants = VariantProps<typeof calloutVariants>;
 
 export const calloutVariants = cva(
