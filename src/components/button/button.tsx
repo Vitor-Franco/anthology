@@ -1,5 +1,6 @@
 import { ComponentProps } from 'react';
 import { type ButtonVariants, variants } from './button-variants';
+import clsx from 'clsx';
 
 export type ButtonProps = ComponentProps<'button'> &
   ButtonVariants & {
@@ -13,5 +14,5 @@ export const Button = ({
   className,
   ...props
 }: ButtonProps) => {
-  return <button {...props} className={variants({ variant, size })} />;
+  return <button {...props} className={clsx(variants({ variant, size }), className)} />;
 };
