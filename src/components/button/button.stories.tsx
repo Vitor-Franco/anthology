@@ -20,12 +20,14 @@ const meta = {
     },
     size: {
       control: 'select',
+      options: ['small', 'medium', 'large'],
     },
     disabled: {
       control: 'boolean',
     },
     variant: {
       control: 'select',
+      options: ['primary', 'secondary', 'destructive'],
     },
   },
 } satisfies Meta;
